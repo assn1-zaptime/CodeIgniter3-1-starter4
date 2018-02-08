@@ -9,9 +9,17 @@
 	</head>
 	<body>
         <div id="container">
-			{content}
-			<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. 
-				{ci_version}</p>
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <a class="brand" href="/">Home</a>
+                    {menubar}
+                </div>
+            </div>
+            <div id="content">
+<!--                <h1>{pagetitle}</h1>-->
+                {content}
+            </div>
+			<p class="footer">Copyright &copy; Zapteam</p>
         </div>
 	</body>
 </html>
