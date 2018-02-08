@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Categories extends Application
+class Catalogue extends Application
 {
 
     function __construct()
@@ -11,7 +11,7 @@ class Categories extends Application
 
     public function index()
     {
-        $this->data['pagebody'] = 'categories';
+        $this->data['pagebody'] = 'Catalogue';
         $this->render();
     }
 
