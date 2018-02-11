@@ -8,10 +8,16 @@
         <link rel="stylesheet" type="text/css" href="/assets/css/default.css"/>
 	</head>
 	<body>
-        <div id="container">
-			{content}
-			<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. 
-				{ci_version}</p>
+        <div class="container">
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <a class="brand" href="/"></a>
+                    {menubar}
+                </div>
+            </div>           
+            <div id="content">
+                {content}
+            </div>
         </div>
 	</body>
 </html>
