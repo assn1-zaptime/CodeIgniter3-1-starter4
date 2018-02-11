@@ -17,4 +17,6 @@ application/logs/*
 /vendor/
 /nbproject/private/
 /nbproject/
+
+#our work
 .idea
