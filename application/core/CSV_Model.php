@@ -61,7 +61,7 @@ class CSV_Model extends Memory_Model
 				else
 				{
 					// build object from a row
-					$record = new $this->entity();
+					$record = new stdClass();
 					for ($i = 0; $i < count($this->_fields); $i ++ )
 						$record->{$this->_fields[$i]} = $data[$i];
 					$key = $record->{$this->_keyfield};
