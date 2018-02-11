@@ -11,7 +11,7 @@ class Catalogue extends Application
 
     public function index()
     {
-        $this->data['pagebody'] = 'catalogue';
+        $this->data['pagebody'] = 'catalogue'; //
         $this->render();
     }
 
