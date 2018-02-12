@@ -19,7 +19,6 @@
             document.getElementById("img4").src = '/img/long.png';
             global = 1;
         }
-        global -= 1;
         console.log(document.getElementById("img1"));
     }
 </script>
