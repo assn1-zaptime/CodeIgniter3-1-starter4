@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="/assets/css/bootstrap.min.css" media="screen"/>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/default.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="container">
@@ -28,15 +31,9 @@
             {content}
         </div>
     </div>
-    <script src="/assets/js/jquery-3.3.1.slim.min.js"></script>
+    <script src="/assets/js/jquery-3.3.1.min.js"></script>
     <script src="/assets/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-            crossorigin="anonymous"></script>
     <hr>
-    <script>
-
-    </script>
     <div class="footer" style="text-align: center"><strong>COMP4711 Group: ZAP</strong><br>Mckay, Thomas<br>Forster,
         Keir<br>Bui, Yen<br>Liu, Yi<br>Dai, Mengqi
     </div>

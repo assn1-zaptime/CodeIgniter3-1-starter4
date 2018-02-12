@@ -55,13 +55,21 @@ p.footer {
 }
 
 .extra-height {
-    height: 400px;
+    height: 50px;
+}
+
+.my-container {
+	position: relative;
+	width: 300px;
+	margin: auto;
 }
 
 .my-image {
     height: 300px;
     width: 300px;
     position: absolute;
-    left: 40%;
-    top: 25%;
+}
+
+.card-body {
+	padding-top: 22rem;
 }

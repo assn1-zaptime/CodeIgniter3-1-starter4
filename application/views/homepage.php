@@ -3,46 +3,47 @@
     {
         $(".navbar-nav").find(".active").removeClass("active");
         $("#nav-item-Home").addClass("active");
-    }
-
-    var global = 1;
-    function update()
-    {
-        if (global == 1)
-        {
-            $.ajax('', '');
-            // document.getElementById("img1").src = '/img/fierce.png';
-            // document.getElementById("img2").src = '/img/bignose.png';
-            // document.getElementById("img3").src = '/img/tongue.png';
-            // document.getElementById("img4").src = '/img/spiky.png';
-            global = 0;
-        }
-
-        else
-        {
-            // document.getElementById("img1").src = '/img/blue.png';
-            // document.getElementById("img2").src = '/img/smallnose.png';
-            // document.getElementById("img3").src = '/img/smiling.png';
-            // document.getElementById("img4").src = '/img/long.png';
-            global = 1;
-        }
-    }
+    };
 </script>
-<div class="row extra-height">
-    <div class="form-group">
-        <select class="form-control" id="sel1" onchange="update()">
-            <option>Set 1</option>
-            <option>Set 2</option>
-        </select>
-    </div>
-</div>
 <div class="row">
-    <div class="col-xs-12">
-        {sets}
-            <img id="img1" class="my-image" src="/img/{img1}.png" alt="spiky">
-            <img id="img2" class="my-image" src="/img/{img2}.png" alt="spiky">
-            <img id="img3" class="my-image" src="/img/{img3}.png" alt="spiky">
-            <img id="img4" class="my-image" src="/img/{img4}.png" alt="spiky">
-        {/sets}
+    <div class="col-xs-12 extra-height">
+
     </div>
 </div>
+
+<div class="card my-container">
+    {set}
+        <img class="card-img-top my-image" src="/img/{accName}.png" alt="{accName}" style="width:100%">
+    {/set}
+    <div class="card-body">
+        {setScore}
+            <h3 class="card-text">Pretty: {pretty}</h3>
+            <h3 class="card-text">Cool: {cool}</h3>
+            <h3 class="card-text">Wacky: {wacky}</h3>
+            <h3 class="card-text">Total: {total}</h3>
+            <div class="dropdown show">
+                <a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Sets
+                </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="/set/1">Set 1</a>
+                    <a class="dropdown-item" href="/set/2">Set 2</a>
+                </div>
+            </div>
+        {/setScore}
+    </div>
+</div>
+
+<!--<div class="row">-->
+<!--    <div class="col-xs-12">-->
+<!--        {set}-->
+<!--            <img class="my-image" src="/img/{accName}.png" alt="{accName}">-->
+<!--        {/set}-->
+<!--        {setScore}-->
+<!--            <p>Pretty: {pretty}</p>-->
+<!--            <p>Cool: {cool}</p>-->
+<!--            <p>Wacky: {wacky}</p>-->
+<!--            <p>Total: {total}</p>-->
+<!--        {/setScore}-->
+<!--    </div>-->
+<!--</div>-->

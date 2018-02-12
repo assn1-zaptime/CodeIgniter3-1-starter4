@@ -6,7 +6,6 @@
     }
 </script>
     <h1>Catalog</h1>
-<div class="container">
 <?php foreach($cat as $c) {?>
 
     <div class="row" style = "display: inline-block;">  
@@ -33,5 +32,4 @@
     </div>
 
 <?php }?>
-</div>
 <br>
