@@ -35,7 +35,12 @@ class Application extends CI_Controller
         // Build the menubar
         $this->data['menubar'] = $this->parser->parse('menubar', $this->config->item('menu_choices'), true);
 
+        // Establish the meat of the current page, as the "content" parameter.
+        // Parse the requested content template (passed as the "pagebody" parameter) to do so.
 		$this->data['content'] = $this->parser->parse($this->data['pagebody'], $this->data, true);
+
+        // And then parse the page template, which will pull in and position the
+        // "meat" in its middle.
 		$this->parser->parse('template', $this->data);
 	}
 
