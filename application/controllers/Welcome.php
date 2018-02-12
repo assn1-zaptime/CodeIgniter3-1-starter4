@@ -5,24 +5,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Welcome extends Application
 {
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/
-	 * 	- or -
-	 * 		http://example.com/welcome/index
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /welcome/<method_name>
-	 * @see https://codeigniter.com/user_guide/general/urls.html
-	 */
+    private $all_sets = null;
+
+    function __construct()
+    {
+        parent::__construct();
+        $this->load->model('Sets');
+        $this->all_sets = $this->Sets->all();
+    }
+
 	public function index()
 	{
 		$this->data['pagebody'] = 'homepage';
+        $this->data['pagetitle'] = 'Zapteam';
 
-		$source = $this->
-		$this->render(); 
+        $this->data['sets'] = $this->all_sets;
+
+		$this->render();
 	}
 
 }
