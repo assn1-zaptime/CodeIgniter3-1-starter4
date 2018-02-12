@@ -13,32 +13,66 @@ class Info extends CI_Controller
     }
 
     /**
-     *  Normal entry point ... should never get here
-     */
+     *  index() should return a description of the scenario
+    */
+    
     public function index()
     {
-            redirect('/');
+            $description = array('Scenario' => 'Face Creator');
+            echo json_encoder($description);
+    }
+     
+     
+    /**
+     * should return the designated accessory, or all of them if none is specifically requested
+     */
+    public function catalog($key)
+    {
+        if($key == null) {
+            $record = $this->accessories->all();
+            header("Content-type: application/json");
+            echo json_encode($record, JSON_PRETTY_PRINT);
+        } else {
+            $record = $this->accessories->get($key);
+            header("Content-type: application/json");
+            echo json_encode($record, JSON_PRETTY_PRINT);
+        }
+        
     }
 
-    public function accessories()
+    /**
+     * category($key) should return the designated category, or all of them if none is specifically requested
+     * @param type $key
+     */
+    public function category($key)
     {
-        $record = $this->accessories->all();
-        header("Content-type: application/json");
-        echo json_encode($record, JSON_PRETTY_PRINT);
-    }
-
-    public function categories()
-    {
-        $record = $this->categories->all();
-        header("Content-type: application/json");
-        echo json_encode($record, JSON_PRETTY_PRINT);
+        
+        if($key == null) {
+            $record = $this->category->all();
+            header("Content-type: application/json");
+            echo json_encode($record, JSON_PRETTY_PRINT);
+        } else {
+            $record = $this->category->get($key);
+            header("Content-type: application/json");
+            echo json_encode($record, JSON_PRETTY_PRINT);
+        }
     }
     
-    public function sets()
+    /**
+     * bundle($key) should return the designated category, or all of them if none is specifically requested
+     * @param type $key
+     */
+    public function bundle($key)
     {
-        $record = $this->sets->all();
-        header("Content-type: application/json");
-        echo json_encode($record, JSON_PRETTY_PRINT);
+        if($key == null) {
+            $record = $this->sets->all();
+            header("Content-type: application/json");
+            echo json_encode($record, JSON_PRETTY_PRINT);
+        } else {
+            $record = $this->sets->get($key);
+            header("Content-type: application/json");
+            echo json_encode($record, JSON_PRETTY_PRINT);
+        }
     }
 }
 
