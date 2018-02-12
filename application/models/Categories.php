@@ -5,4 +5,5 @@ class Categories extends CSV_Model {
 	{
 		parent::__construct('csv/categories.csv', 'catCode');
 	}
+
 }
