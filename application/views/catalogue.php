@@ -9,10 +9,10 @@
 
     <div class="row" style = "display: inline-block;">  
         <h1><?php echo strtoupper ($c->catName);?></h1>
-        <div class="col-sm-2"></div>
+        <div class="col-sm-1"></div>
         <?php foreach($acc as $a) {
             if (strcmp($a->catCode,$c->catCode)==0) {?>
-        <div class="w3-container col-sm-4" style= " display: inline-block;">
+        <div class="w3-container col-sm-5" style= " display: inline-block;">
             <div class="w3-card-4" style="width:350px">
                 <div class="w3-container">
                 <img src=<?php echo 'img//'.$a->accName.'.png';?> 
@@ -26,6 +26,7 @@
                 </div>
             </div>
         </div>
+        <div class="col-sm-1"></div>
         <?php }} ?>
     </div>
 
