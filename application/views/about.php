@@ -4,5 +4,5 @@
     <p>The images are in the public domain. <a href="http://images.google.ca" target="_blank">Google</a>.</p>
     <p>Created for educational use only.</p>
     <p>This website was created for the Spring 2018 session of COMP4711, at <a href="http://www.bcit.ca" target="_blank">BCIT</a>.</p>
-    <p>The name of group and group memebers are in the footer.</p>
+    <p>All rights reserved.</p>
 </div>
