@@ -1,8 +1,26 @@
 <script>
-    function update(sets)
+    var global = 1;
+    function update()
     {
-        console.log("select item changed!")
-        console.log(sets);
+        if (global == 1)
+        {
+            document.getElementById("img1").src = '/img/fierce.png';
+            document.getElementById("img2").src = '/img/bignose.png';
+            document.getElementById("img3").src = '/img/tongue.png';
+            document.getElementById("img4").src = '/img/spiky.png';
+            global = 0;
+        }
+
+        else
+        {
+            document.getElementById("img1").src = '/img/blue.png';
+            document.getElementById("img2").src = '/img/smallnose.png';
+            document.getElementById("img3").src = '/img/smiling.png';
+            document.getElementById("img4").src = '/img/long.png';
+            global = 1;
+        }
+        global -= 1;
+        console.log(document.getElementById("img1"));
     }
 </script>
 <div class="row extra-height">
@@ -16,10 +34,10 @@
 <div class="row">
     <div class="col-xs-12">
         {sets}
-            <img class="my-image" src="/img/{img1}.png" alt="spiky">
-            <img class="my-image" src="/img/{img2}.png" alt="spiky">
-            <img class="my-image" src="/img/{img3}.png" alt="spiky">
-            <img class="my-image" src="/img/{img4}.png" alt="spiky">
+            <img id="img1" class="my-image" src="/img/{img1}.png" alt="spiky">
+            <img id="img2" class="my-image" src="/img/{img2}.png" alt="spiky">
+            <img id="img3" class="my-image" src="/img/{img3}.png" alt="spiky">
+            <img id="img4" class="my-image" src="/img/{img4}.png" alt="spiky">
         {/sets}
     </div>
 </div>
