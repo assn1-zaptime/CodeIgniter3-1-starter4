@@ -16,7 +16,10 @@
 <div class="row">
     <div class="col-xs-12">
         {sets}
-            <img class="my-image" src="/img/spiky.png" alt="spiky">
+            <img class="my-image" src="/img/{img1}.png" alt="spiky">
+            <img class="my-image" src="/img/{img2}.png" alt="spiky">
+            <img class="my-image" src="/img/{img3}.png" alt="spiky">
+            <img class="my-image" src="/img/{img4}.png" alt="spiky">
         {/sets}
     </div>
 </div>
