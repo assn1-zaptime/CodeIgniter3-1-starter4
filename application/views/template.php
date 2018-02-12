@@ -5,6 +5,7 @@
 		<title>{pagetitle}</title>
         <meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link href="/assets/css/bootstrap.min.css" rel="stylesheet" media="screen"/>
         <link rel="stylesheet" type="text/css" href="/assets/css/default.css"/>
 	</head>
 	<body>
@@ -19,5 +20,9 @@
                 {content}
             </div>
         </div>
+        <script src="/assets/js/jquery-1.11.1.min.js"></script>
+        <script src="/assets/js/bootstrap.min.js"></script>
 	</body>
+        <hr>
+        <div class="footer" style="text-align: center"><strong>COMP4711 Group: ZAP</strong><br>Mckay, Thomas<br>Forster, Keir<br>Bui, Yen<br>Liu, Yi<br>Dai, Mengqi</div>
 </html>
