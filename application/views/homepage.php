@@ -2,11 +2,12 @@
     function update(sets)
     {
         console.log("select item changed!")
+        console.log(sets);
     }
 </script>
-<div class="row">
+<div class="row extra-height">
     <div class="form-group">
-        <select class="form-control" id="sel1" onchange="update({sets})">
+        <select class="form-control" id="sel1" onchange="update()">
             <option>Set 1</option>
             <option>Set 2</option>
         </select>

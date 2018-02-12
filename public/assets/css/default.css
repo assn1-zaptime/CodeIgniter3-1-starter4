@@ -54,8 +54,14 @@ p.footer {
 	box-shadow: 0 0 8px #D0D0D0;
 }
 
+.extra-height {
+    height: 400px;
+}
+
 .my-image {
     height: 300px;
     width: 300px;
     position: absolute;
+    left: 300px;
+    top: 200px;
 }
