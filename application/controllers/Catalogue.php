@@ -17,7 +17,6 @@ class Catalogue extends Application
     public function index()
     {
         $this->data['pagetitle'] = 'Catalogue';
-        //$i=0;
         $this->data['acc'] = $this->all_acc;
         $this->data['cat'] = $this->all_cat;
         
