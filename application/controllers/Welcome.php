@@ -17,9 +17,9 @@ class Welcome extends Application
         $this->all_acc = $this->Accessories->all();
     }
 
-	public function index()
-	{
-		$this->data['pagebody'] = 'homepage';
+    public function index()
+    {
+        $this->data['pagebody'] = 'homepage';
         $this->data['pagetitle'] = 'Zapteam';
         $this->setData = array();
 
@@ -31,7 +31,7 @@ class Welcome extends Application
 
 
 
-		$this->render();
-	}
+        $this->render();
+    }
 
 }

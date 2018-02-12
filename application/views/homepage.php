@@ -32,11 +32,10 @@
 <div class="row">
     <div class="col-xs-12">
         {sets}
-            <img id="img1" class="my-image" src="/img/{img1}.png" alt="spiky">
-            <img id="img2" class="my-image" src="/img/{img2}.png" alt="spiky">
-            <img id="img3" class="my-image" src="/img/{img3}.png" alt="spiky">
-            <img id="img4" class="my-image" src="/img/{img4}.png" alt="spiky">
+        <img id="img1" class="my-image" src="/img/{img1}.png" alt="spiky">
+        <img id="img2" class="my-image" src="/img/{img2}.png" alt="spiky">
+        <img id="img3" class="my-image" src="/img/{img3}.png" alt="spiky">
+        <img id="img4" class="my-image" src="/img/{img4}.png" alt="spiky">
         {/sets}
     </div>
 </div>
-
