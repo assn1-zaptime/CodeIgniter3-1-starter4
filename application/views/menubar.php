@@ -3,8 +3,8 @@
  * Menu navbar, just an unordered list
  */
 ?>
-<ul class="nav">
-    {menudata}
-    <li><a href="{link}">{name}</a></li>
-    {/menudata}
-</ul>
+
+{menudata}
+    <a id="nav-item-{name}" class="nav-item nav-link" href="{link}">{name}</a>
+{/menudata}
+
