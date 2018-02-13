@@ -1,10 +1,11 @@
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-
-
-<body>
+<script>
+    window.onload = function()
+    {
+        $(".navbar-nav").find(".active").removeClass("active");
+        $("#nav-item-Catalogue").addClass("active");
+    }
+</script>
     <h1>Catalog</h1>
-<div class="container">
 <?php foreach($cat as $c) {?>
 
     <div class="row" style = "display: inline-block;">  
@@ -31,6 +32,4 @@
     </div>
 
 <?php }?>
-</div>
 <br>
-</body>
