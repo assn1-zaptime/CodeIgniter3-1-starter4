@@ -23,4 +23,6 @@
         <script src="/assets/js/jquery-1.11.1.min.js"></script>
         <script src="/assets/js/bootstrap.min.js"></script>
 	</body>
+        <hr>
+        <div class="footer" style="text-align: center"><strong>COMP4711 Group: ZAP</strong><br>Mckay, Thomas<br>Forster, Keir<br>Bui, Yen<br>Liu, Yi<br>Dai, Mengqi</div>
 </html>
