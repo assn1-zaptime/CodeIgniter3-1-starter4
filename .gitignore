@@ -20,3 +20,4 @@ application/logs/*
 
 #our work
 .idea
+/tmp
