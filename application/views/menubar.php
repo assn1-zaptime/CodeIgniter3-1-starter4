@@ -15,4 +15,5 @@
             <li><a href="/roles/actor/Admin">Admin</a></li>
       </ul>
     </li>
+    <li><a href="#">{role}</a></li>
 </ul>
