@@ -17,7 +17,7 @@ class Accessory extends Entity {
         if(empty($value)){
             throw InvalidArgumentException("The AccCode could not be empty");
         }
-        if(!preg_match("acc-[0-9]*", $value)){
+        if(!preg_match("/^acc-[0-9]*/i", $value)){
             throw InvalidArgumentException("The accCode should looks like acc-__");
         }
         $this->accCode = $value;
@@ -28,7 +28,7 @@ class Accessory extends Entity {
         if(empty($value)){
             throw InvalidArgumentException("The CatCode could not be empty");
         }
-        if(!preg_match("cat-[0-9]*", $value)){
+        if(!preg_match("/^cat-/i", $value)){
             throw InvalidArgumentException("The accCode should looks like cat-__");
         }
         $this->catCode = $value;

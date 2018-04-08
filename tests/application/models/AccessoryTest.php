@@ -12,6 +12,7 @@ class TaskTest extends TestCase
         $this->CI->load->model('accessory');
         $this->Accessory = new Accessory();
         $this->Accessory->accCode = "acc-9";
+        $this->Accessory->catCode = "cat-1";
         $this->Accessory->pretty = 60;
         $this->Accessory->cool = 20;
         $this->Accessory->wacky = 40;
@@ -19,16 +20,22 @@ class TaskTest extends TestCase
     
     function testSetup(){
         $this->assertEquals("acc-9", $this->Accessory->accCode);
+        $this->assertEquals("cat-1", $this->Accessory->catCode);
         $this->assertEquals(60, $this->Accessory->pretty);
         $this->assertEquals(20, $this->Accessory->cool);
         $this->assertEquals(40, $this->Accessory->wacky);
     }
 
-
     public function testSetAccCode (){
         $expected = "acc-9";
         $this->Accessory->accCode = $expected;
         $this->assertEquals($expected,$this->Accessory->accCode);
+    }
+    
+    public function testSetCatCode (){
+        $expected = "cat-1";
+        $this->Accessory->catCode = $expected;
+        $this->assertEquals($expected,$this->Accessory->catCode);
     }
     
     public function testSetPretty (){

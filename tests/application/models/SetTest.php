@@ -9,19 +9,19 @@ class TaskListTest extends TestCase
     {
       // Load CI instance normally
       $this->CI = &get_instance();
+      //$this->CI->load->model('set');
       $this->CI->load->model('accessory');
-      $this->CI->load->model('set');
       $this->set = new Set();
     }
     
     public function testSetSetID (){
-        $expected = 12;
+        $expected = 3;
         $this->set->setID = $expected;
         $this->assertEquals($expected,$this->set->setID);
     }
     
      public function testSetAct1AccCode (){
-        $expected = "acc-1";
+        $expected = "acc-2";
         $this->set->cat1AccCode = $expected;
         $this->assertEquals($expected,$this->set->cat1AccCode);
     }
@@ -33,7 +33,7 @@ class TaskListTest extends TestCase
     }
     
     public function testSetAct3AccCode(){
-        $expected = "acc-5";
+        $expected = "acc-6";
         $this->set->cat3AccCode = $expected;
         $this->assertEquals($expected,$this->set->cat3AccCode);
     }

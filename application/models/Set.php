@@ -20,7 +20,7 @@ class Set extends Memory_Model {
         if(empty($value)){
             throw InvalidArgumentException("The attribute 1 could not be empty");
         }
-        if(!preg_match("acc-[0-9]*", $value)){
+        if(!preg_match("/^acc-[0-9]*/i", $value)){
             throw InvalidArgumentException("The accCode should looks like acc-__");
         }
         $this->cat1AccCode = $value;
@@ -32,7 +32,7 @@ class Set extends Memory_Model {
         if(empty($value)){
             throw InvalidArgumentException("The attribute 2 could not be empty");
         }
-        if(!preg_match("acc-[0-9]*", $value)){
+        if(!preg_match("/^acc-[0-9]*/i", $value)){
             throw InvalidArgumentException("The accCode should looks like acc-__");
         }
         $this->cat2AccCode = $value;
@@ -44,7 +44,7 @@ class Set extends Memory_Model {
         if(empty($value)){
             throw InvalidArgumentException("The attribute 3 could not be empty");
         }
-        if(!preg_match("acc-[0-9]*", $value)){
+        if(!preg_match("/^acc-[0-9]*/i", $value)){
             throw InvalidArgumentException("The accCode should looks like acc-__");
         }
         $this->cat3AccCode = $value;
@@ -56,7 +56,7 @@ class Set extends Memory_Model {
         if(empty($value)){
             throw InvalidArgumentException("The attribute 4 could not be empty");
         }
-        if(!preg_match("acc-[0-9]*", $value)){
+        if(!preg_match("/^acc-[0-9]*/i", $value)){
             throw InvalidArgumentException("The accCode should looks like acc-__");
         }
         $this->cat4AccCode = $value;
