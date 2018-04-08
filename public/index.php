@@ -235,9 +235,6 @@ switch (ENVIRONMENT)
 	// Name of the "system" directory
 	define('SYSDIR', basename(BASEPATH));
 
-    // Name of the "system" directory
-    define('APPDIR', dirname(__FILE__). DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'application' . DIRECTORY_SEPARATOR);
-
 	// The path to the "application" directory
 	if (is_dir($application_folder))
 	{
