@@ -54,7 +54,8 @@ class Catalogue extends Application
             'fname'  => form_label('Accessory name ') . form_input('accName', $a->accName),
             'fatt1'  => form_label('Pretty ') . form_input('att1', $a->att1),
             'fatt2'    => form_label('Cool ') . form_input('att2',  $a->att2),
-            'fatt3'  => form_label('Wacky ') . form_input('att3', $a->att3)
+            'fatt3'  => form_label('Wacky ') . form_input('att3', $a->att3),
+            'zsubmit' => form_submit('submit', 'Update accessory')
         );
         $this->data = array_merge($this->data, $fields);
 
@@ -118,7 +119,8 @@ class Catalogue extends Application
     {
         $dto = $this->session->userdata('task');
         $a = $this->tasks->get($dto->accCode);
-        $this->tasks->delete($a->accCode);
+        $this->load->model('Categories');
+        $this->Categories->delete($a->accCode);
         $this->session->unset_userdata('task');
         redirect('/catalogue');
     }

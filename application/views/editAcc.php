@@ -5,6 +5,7 @@
     {fatt1}<br/>
     {fatt2}<br/>
     {fatt3}<br/>
+    {zsubmit}
 </form>
     {error}
     <br/>
