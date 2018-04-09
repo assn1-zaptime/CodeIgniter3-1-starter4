@@ -22,7 +22,17 @@ class Welcome extends Application
     public function addSet()
     {
         echo "hello from addSet!<br>";
-        echo $this->post[]
+
+
+        $a = (array) $this->session->userdata('task');
+        $a = array_merge($a, $this->input->post());
+        $a = (object) $a;  // convert back to object
+        $this->session->set_userdata('task', (object) $a);
+
+
+
+
+
         $this->showSet(2);
     }
 
