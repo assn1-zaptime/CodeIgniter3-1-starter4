@@ -21,3 +21,6 @@ tmp/*
 
 #our work
 .idea
+/tmp/
+composer.lock
+/tests/coverage
