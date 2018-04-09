@@ -29,7 +29,7 @@ class Catalogue extends Application
                 <br>Wacky: $a->att3";
                 
             if ($role == ROLE_ADMIN)
-                $content.="<br><a href='/catalogue/edit/$a->accCode'><input type='button' value='$a->accCode'/></a>";
+                $content.="<br><br><a href='/catalogue/edit/$a->accCode'><input type='button' value='Edit'/></a>";
             $content .= "</div></div></div>"; }}
         }
         $this->data['content'] = $content;
@@ -38,21 +38,37 @@ class Catalogue extends Application
         $this->render(); 
     
     }
-    
-    // Initiate adding a new task
-    public function add()
+
+    private function showit()
     {
-        $task = $this->tasks->create();
-        $this->session->set_userdata('task', $task);
-        $this->showit();
+        $this->load->helper('form');
+        $a = $this->session->userdata('task');
+        $this->data['accCode'] = $a->accCode;
+
+        // if no errors, pass an empty message
+        if ( ! isset($this->data['error']))
+            $this->data['error'] = '';
+
+        $fields = array(
+            'fcatcode' => form_label('Category Code ') . form_input('catCode', $a->catCode),
+            'fname'  => form_label('Accessory name ') . form_input('accName', $a->accName),
+            'fatt1'  => form_label('Pretty ') . form_input('att1', $a->att1),
+            'fatt2'    => form_label('Cool ') . form_input('att2',  $a->att2),
+            'fatt3'  => form_label('Wacky ') . form_input('att3', $a->att3)
+        );
+        $this->data = array_merge($this->data, $fields);
+
+        $this->data['pagebody'] = 'editAcc';
+        $this->render();
     }
-    
+
     // initiate editing of a task
-    public function edit($id = null)
+    public function edit($accCode = null)
     {
-        if ($id == null)
-            redirect('/mtce');
-        $task = $this->tasks->get($id);
+        if ($accCode == null)
+            redirect('/catalogue');
+        $this->load->model('Categories');
+        $task = $this->Categories->get($accCode);
         $this->session->set_userdata('task', $task);
         $this->showit();
     }
@@ -62,27 +78,21 @@ class Catalogue extends Application
     {
         // setup for validation
         $this->load->library('form_validation');
-        $this->form_validation->set_rules($this->tasks->rules());
 
         // retrieve & update data transfer buffer
         // retrieve & update data transfer buffer
-        $task = (array) $this->session->userdata('task');
-        $task = array_merge($task, $this->input->post());
-        $task = (object) $task;  // convert back to object
-        $this->session->set_userdata('task', (object) $task);
+        $a = (array) $this->session->userdata('task');
+        $a = array_merge($a, $this->input->post());
+        $a = (object) $a;  // convert back to object
+        $this->session->set_userdata('task', (object) $a);
 
         // validate away
         if ($this->form_validation->run())
         {
-            if (empty($task->id))
+            if (empty($a->accCode))
             {
-                                $task->id = $this->tasks->highest() + 1;
-                $this->tasks->add($task);
-                $this->alert('Task ' . $task->id . ' added', 'success');
-            } else
-            {
-                $this->tasks->update($task);
-                $this->alert('Task ' . $task->id . ' updated', 'success');
+                $this->tasks->update($a);
+                $this->alert('Task ' . $a->accCode . ' updated', 'success');
             }
         } else
         {
@@ -107,8 +117,8 @@ class Catalogue extends Application
     function delete()
     {
         $dto = $this->session->userdata('task');
-        $task = $this->tasks->get($dto->id);
-        $this->tasks->delete($task->id);
+        $a = $this->tasks->get($dto->accCode);
+        $this->tasks->delete($a->accCode);
         $this->session->unset_userdata('task');
         redirect('/catalogue');
     }
