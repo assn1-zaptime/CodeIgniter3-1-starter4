@@ -6,6 +6,7 @@ class Catalogue extends Application
     public function index()
     {
         $cat = ""; $acc = "";
+        $role = $this->session->userdata('userrole');
         $this->load->model('Categories');
         $this->load->model('Accessories');
         $cat = $this->Categories->all();
@@ -25,19 +26,17 @@ class Catalogue extends Application
                 <br>Name: $a->accName
                 <br>Pretty: $a->att1
                 <br>Cool: $a->att2
-                <br>Wacky: $a->att3
-            </p><button>Edit</button></div></div></div>"; }}
+                <br>Wacky: $a->att3";
+                
+            if ($role == ROLE_ADMIN)
+                $content.="<br><a href='/catalogue/edit/$a->accCode'><input type='button' value='$a->accCode'/></a>";
+            $content .= "</div></div></div>"; }}
         }
         $this->data['content'] = $content;
         $this->data['pagetitle'] = 'CHECK OUT OUR ACCESSORIES';
         $this->data['pagebody'] = 'catalogue';
         $this->render(); 
-    }
-    'previous' => (max($num-1,1)),
-            'next' => min($num+1,$lastpage),
-            'last' => $lastpage
-        );
-        return $this->parser->parse('itemnav',$parms,true);
+    
     }
     
     // Initiate adding a new task
