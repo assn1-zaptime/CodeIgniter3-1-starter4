@@ -19,4 +19,11 @@ class Welcome extends Application
         $this->showSet($key);
     }
 
+    public function addSet()
+    {
+        echo "hello from addSet!<br>";
+        echo $this->post[]
+        $this->showSet(2);
+    }
+
 }
