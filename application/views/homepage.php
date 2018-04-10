@@ -6,52 +6,6 @@
     };
 </script>
 <div class="row">
-    {gearCustomization}
-        <!-- Hair -->
-        <div class="col-4">
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <label class="input-group-text" for="inputGroupSelect01">Hair</label>
-                </div>
-                <select name="hairSelect" class="custom-select" id="inputGroupSelect01">
-                    <option selected value="acc7">acc-7</option>
-                    <option value="acc8">acc-8</option>
-                </select>
-            </div>
-            <!-- Eyes -->
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <label class="input-group-text" for="inputGroupSelect01">Eyes</label>
-                </div>
-                <select name="EyesSelect" class="custom-select" id="inputGroupSelect01">
-                    <option selected value="acc1">acc-1</option>
-                    <option value="acc2">acc-2</option>
-                </select>
-            </div>
-            <!-- Nose -->
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <label class="input-group-text" for="inputGroupSelect01">Nose</label>
-                </div>
-                <select name="NoseSelect" class="custom-select" id="inputGroupSelect01">
-                    <option selected value="acc3">acc-3</option>
-                    <option value="acc4">acc-4</option>
-                </select>
-            </div>
-            <!-- Mouth -->
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <label class="input-group-text" for="inputGroupSelect01">Mouth</label>
-                </div>
-                <select name="mouthSelect" class="custom-select" id="inputGroupSelect01">
-                    <option selected value="acc5">acc-5</option>
-                    <option value="acc6">acc-6</option>
-                </select>
-            </div>
-            <form class="p-4" action="/addSet" method="post"><button type="submit" class="btn btn-primary">Save</button></form>
-        </div>
-    {/gearCustomization}
-
     <div class="col">
         <div class="card my-container">
             {set}
@@ -63,16 +17,18 @@
                     <h3 class="card-text">Cool: {cool}</h3>
                     <h3 class="card-text">Wacky: {wacky}</h3>
                     <h3 class="card-text">Total: {total}</h3>
-                    <div class="dropdown show">
-                        <a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Sets
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item" href="/set/1">Set 1</a>
-                            <a class="dropdown-item" href="/set/2">Set 2</a>
-                        </div>
-                    </div>
                 {/setScore}
+                <div class="dropdown show">
+                    <a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Sets
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        {sets}
+                        <a class="dropdown-item" href="/set/{setID}">Set {setID}</a>
+                        {/sets}
+                    </div>
+                </div>
+                {addSet}
             </div>
         </div>
     </div>

@@ -73,3 +73,7 @@ p.footer {
 .card-body {
 	padding-top: 22rem;
 }
+
+.createSetForm label {
+	display: block;
+}
